@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkscript_indicators=globalThis.webpackChunkscript_indicators||[]).push([[2634],{9179(s,i,t){t.r(i),t.d(i,{default:()=>n});t(6540);var r=t(6347),c=t(797),a=t(4848);function n(){const{siteConfig:s}=(0,c.A)(),i=s.baseUrl;return(0,a.jsx)(r.rd,{to:`${i}Script-Basics`})}}}]);

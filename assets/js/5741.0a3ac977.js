@@ -1,0 +1,1 @@
+(globalThis.webpackChunkscript_indicators=globalThis.webpackChunkscript_indicators||[]).push([[5741],{5741(){}}]);
