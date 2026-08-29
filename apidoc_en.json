@@ -1,0 +1,2456 @@
+[
+  {
+    "type": "function",
+    "name": "alma",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series.",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "period",
+            "description": "MA Period.",
+            "type": "<code>integer</code>"
+          },
+          {
+            "name": "offset",
+            "description": "Gaussian Distribution mean value.     Controls responsiveness of the filter,     where 0 is the least responsive and 1 is the most responsive",
+            "type": "<code>numeric</code>"
+          },
+          {
+            "name": "sigma",
+            "description": "Gaussian Distribution standard deviation.     Controls the smoothness of the filter.",
+            "type": "<code>numeric</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "averages",
+    "description": "Calculates Arnaud Legoux Moving Average."
+  },
+  {
+    "type": "function",
+    "name": "ema",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "source",
+            "description": "Input series.",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "period",
+            "description": "MA period.",
+            "type": "<code>numeric</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "averages",
+    "description": "Returns the exponential moving average of <strong>source</strong> for the <strong>period</strong> bars."
+  },
+  {
+    "type": "function",
+    "name": "hma",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "period",
+            "description": "MA period",
+            "type": "<code>numeric</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "averages",
+    "description": "Returns the Hull moving average of <strong>source</strong> for the <strong>period</strong> bars. <code>hma</code> is a composition of the <code>wma</code> by the following rule:"
+  },
+  {
+    "type": "function",
+    "name": "rma",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series"
+          },
+          {
+            "name": "period",
+            "description": "MA period",
+            "type": "<code>numeric</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "averages",
+    "description": "Returns the rolling moving average of <strong>source</strong> for the <strong>period</strong> bars."
+  },
+  {
+    "type": "function",
+    "name": "sma",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series"
+          },
+          {
+            "name": "period",
+            "description": "MA period",
+            "type": "<code>numeric</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "averages",
+    "description": "Returns the simple moving average of <strong>source</strong> for the <strong>period</strong> bars. If there are less than <code>period</code> values in the series - the result is <strong>nan</strong>."
+  },
+  {
+    "type": "function",
+    "name": "ssma",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series"
+          },
+          {
+            "name": "period",
+            "description": "MA period",
+            "type": "<code>numeric</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "averages",
+    "description": "Returns the smoothed simple moving average of <strong>source</strong> for the <strong>period</strong> bars. If there are less than <code>period</code> values in the series - the result is <strong>nan</strong>. The first value of <code>ssma</code> is calculated as <code>sma(series, period)</code>. Subsequent values are calculated according to the formula:"
+  },
+  {
+    "type": "function",
+    "name": "tma",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series"
+          },
+          {
+            "name": "period",
+            "description": "MA period",
+            "type": "<code>numeric</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "averages",
+    "description": "Returns the triangular moving average of <strong>source</strong> for the <strong>period</strong> bars. If there are less than :math:<code>2\\mathrm{period} - 1</code> values in the series - the result is <strong>nan</strong>. The first value of <code>ssma</code> is calculated as <code>sma(series, period)</code>. Subsequent values are calculated according to the formula:"
+  },
+  {
+    "type": "function",
+    "name": "vidya",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series"
+          },
+          {
+            "name": "period",
+            "description": "MA period",
+            "type": "<code>numeric</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "averages",
+    "description": "Returns the Chande volatility index dynamic moving average of <strong>source</strong> for the <strong>period</strong> bars. <code>vidya</code> is based on the <code>cmo</code>."
+  },
+  {
+    "type": "function",
+    "name": "vwma",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series"
+          },
+          {
+            "name": "period",
+            "description": "MA period",
+            "type": "<code>numeric</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "averages",
+    "description": "Returns the volume weighted moving average of <strong>source</strong> for the <strong>period</strong> bars."
+  },
+  {
+    "type": "function",
+    "name": "wma",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series"
+          },
+          {
+            "name": "period",
+            "description": "MA period",
+            "type": "<code>numeric</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "averages",
+    "description": "Returns the weighted moving average of <strong>source</strong> for the <strong>period</strong> bars."
+  },
+  {
+    "type": "function",
+    "name": "input",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "default",
+            "optional": true
+          },
+          {
+            "name": "name",
+            "optional": true
+          },
+          {
+            "name": "type",
+            "optional": true
+          },
+          {
+            "name": "options",
+            "optional": true
+          }
+        ],
+        "has_table_overload": true
+      },
+      {
+        "args": [
+          {
+            "name": "default",
+            "optional": true,
+            "description": "Default return value for the input. Default value depends on <code>type</code>."
+          },
+          {
+            "name": "name",
+            "optional": true,
+            "description": "Name of the input. Can be a localisation key. Default value is <code>\"\"</code>.",
+            "type": "<code>string</code>"
+          },
+          {
+            "name": "type",
+            "optional": true,
+            "description": "Input type. Default value depends on <code>value</code>.",
+            "type": "<code>input_type</code>"
+          },
+          {
+            "name": "min",
+            "optional": true,
+            "description": "Minimal allowed value. Default value depends on <code>type</code>."
+          },
+          {
+            "name": "max",
+            "optional": true,
+            "description": "Maximal allowed value. Default value depends on <code>type</code>."
+          },
+          {
+            "name": "step",
+            "optional": true,
+            "description": "Value step. Default value depends on <code>type</code>."
+          }
+        ],
+        "has_table_overload": true,
+        "returns": "Same type, as <code>default</code>"
+      }
+    ],
+    "category": "input",
+    "description": "<strong>input</strong> creates a user-modifiable value to fine tune the instrument. Inputs can control both the evaluation and the visual settings of the indicator. To execute successfully <strong>input</strong> must have a type set either explicitly or deduced from the default value. Thus either <em>default</em> or <em>type</em> must be present in the invocation. Not all input types can be manually deduced, these types must be set explicitly."
+  },
+  {
+    "type": "function",
+    "name": "input_group",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "name",
+            "description": "Name of the input input group. <code>name=</code> can be omitted.",
+            "type": "<code>string</code>"
+          },
+          {
+            "name": "description",
+            "description": "Description for the input group.",
+            "type": "<code>string</code>"
+          },
+          {
+            "name": "inputs",
+            "description": "List of inputs. See below."
+          }
+        ],
+        "table_call": true
+      }
+    ],
+    "category": "input",
+    "description": "<strong>input_group</strong> allows to implicitly create the group of <code>input</code>. Depending on the type of inputs and on the platforms - the way the inputs are displayed varies."
+  },
+  {
+    "type": "function",
+    "name": "abs",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "x",
+            "description": "series or numeric value",
+            "type": "<code>series</code> or <code>numeric</code>"
+          }
+        ],
+        "returns": "same type as <strong>x</strong>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the absolute value of <strong>x</strong>"
+  },
+  {
+    "type": "function",
+    "name": "acos",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "x",
+            "description": "series or numeric value",
+            "type": "<code>series</code> or <code>numeric</code>"
+          }
+        ],
+        "returns": "same type as <strong>x</strong>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the arccosine in radians in the range :math:<code>[0,\\pi]</code> of a number in the range :math:<code>[-1,1]</code>, <strong>nil</strong> otherwise"
+  },
+  {
+    "type": "function",
+    "name": "asin",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "x",
+            "description": "series or numeric value",
+            "type": "<code>series</code> or <code>numeric</code>"
+          }
+        ],
+        "returns": "same type as <strong>x</strong>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the arcsine in radians in the range"
+  },
+  {
+    "type": "function",
+    "name": "atan",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "y",
+            "description": "Value representing the proportion of the y-coordinate.",
+            "type": "<code>series</code> or <code>numeric</code>"
+          },
+          {
+            "name": "x",
+            "optional": true,
+            "description": "Value representing the proportion of the x-coordinate. Default value is <strong>1</strong>.",
+            "type": "<code>series</code> or <code>numeric</code>"
+          }
+        ],
+        "returns": "same type as <strong>y</strong>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the arc tangent of :math:<code>\\frac{y}{x}</code> in radians in the range :math:<code>[-\\frac{\\pi}{2},\\frac{\\pi}{2}]</code>"
+  },
+  {
+    "type": "function",
+    "name": "ceil",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "x",
+            "description": "Input value",
+            "type": "<code>numeric</code> or <code>series[numeric]</code>"
+          }
+        ],
+        "returns": "<code>integer</code> or <code>series[integer]</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the closest to the negative infinity integer value, that is not less than <strong>x</strong>"
+  },
+  {
+    "type": "function",
+    "name": "change",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "n=1"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the <code>series - series [n]</code>."
+  },
+  {
+    "type": "function",
+    "name": "correlation",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "x",
+            "description": "First series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "y",
+            "description": "Second series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "n",
+            "description": "Number of bars",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Calculates the correlation coefficient between series <strong>a</strong> and <strong>b</strong> in the last <strong>n</strong> bars"
+  },
+  {
+    "type": "function",
+    "name": "cos",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "x",
+            "description": "Input value",
+            "type": "<code>numeric</code> or <code>series</code>"
+          }
+        ],
+        "returns": "<code>numeric</code> or <code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the cosine of <strong>x</strong>. <strong>x</strong> is in radians."
+  },
+  {
+    "type": "function",
+    "name": "deg",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "x",
+            "description": "Input value",
+            "type": "<code>numeric</code> or <code>series</code>"
+          }
+        ],
+        "returns": "<code>numeric</code> or <code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Converts <strong>x</strong> from radians into the degrees."
+  },
+  {
+    "type": "function",
+    "name": "exp",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "x",
+            "description": "Input value",
+            "type": "<code>numeric</code> or <code>series</code>"
+          }
+        ],
+        "returns": "<code>numeric</code> or <code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the :math:<code>e^x</code>."
+  },
+  {
+    "type": "function",
+    "name": "floor",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "x",
+            "description": "Input value",
+            "type": "<code>numeric</code> or <code>series[numeric]</code>"
+          }
+        ],
+        "returns": "<code>integer</code> or <code>series[integer]</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the closest to the postitive infinity integer value, that is not greater than <strong>x</strong>"
+  },
+  {
+    "type": "function",
+    "name": "linreg",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "x",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "n",
+            "description": "Number of bars to calculate the regression",
+            "type": "<code>integer</code>"
+          },
+          {
+            "name": "offset",
+            "description": "Regression offset",
+            "type": "<code>numeric</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Linear regression curve. A line that best fits the prices specified over a user-defined time period. It is calculated using the least squares method."
+  },
+  {
+    "type": "function",
+    "name": "log",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "value",
+            "description": "Input value",
+            "type": "<code>numeric</code> or <code>series</code>"
+          }
+        ],
+        "returns": "<code>numeric</code> or <code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the natural logarithm of <strong>x</strong>."
+  },
+  {
+    "type": "function",
+    "name": "mad",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "period",
+            "description": "Input period",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the mean absolute deviation of the <code>series</code> over the last <code>period</code> bars."
+  },
+  {
+    "type": "function",
+    "name": "max",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "lvalue",
+            "description": "First value"
+          },
+          {
+            "name": "rvalue",
+            "description": "Second value"
+          }
+        ],
+        "returns": "<code>series</code>, if <code>lvalue</code> and/or <code>rvalue</code> is <code>series</code>, <code>numeric</code> otherwise"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the greater of <code>lvalue</code> and <code>rvalue</code>."
+  },
+  {
+    "type": "function",
+    "name": "median",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "period",
+            "description": "Input period",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the median of the last <code>period</code> values in the <code>series</code>."
+  },
+  {
+    "type": "function",
+    "name": "min",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "lvalue",
+            "description": "First value"
+          },
+          {
+            "name": "rvalue",
+            "description": "Second value"
+          }
+        ],
+        "returns": "<code>series</code>, if <code>lvalue</code> and/or <code>rvalue</code> is <code>series</code>, <code>numeric</code> otherwise"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the lesser of <code>lvalue</code> and <code>rvalue</code>."
+  },
+  {
+    "type": "function",
+    "name": "modf",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "value",
+            "description": "value"
+          }
+        ],
+        "returns": "<code>series</code>, if <code>lvalue</code> and/or <code>rvalue</code> is <code>series</code>, <code>numeric</code> otherwise"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the integral and fractional parts of the given <code>value</code>."
+  },
+  {
+    "type": "function",
+    "name": "percentile_linear_interpolation",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "source",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "period",
+            "description": "Input period",
+            "type": "<code>integer</code>"
+          },
+          {
+            "name": "percentage",
+            "description": "Percentage to select. Must be in the :math:<code>[0,100]</code> range.",
+            "type": "<code>numeric</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Calculates percentile using the method of linear interpolation between the two nearest ranks."
+  },
+  {
+    "type": "function",
+    "name": "percentile_nearest_rank",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "source",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "period",
+            "description": "Input period",
+            "type": "<code>integer</code>"
+          },
+          {
+            "name": "percentage",
+            "description": "Percentage to select. Must be in the :math:<code>[0,100]</code> range.",
+            "type": "<code>numeric</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Calculates percentile using the method of Nearest Rank."
+  },
+  {
+    "type": "function",
+    "name": "rad",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "value"
+          }
+        ],
+        "returns": "<code>numeric</code> or <code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Converts <strong>x</strong> from degrees into the radians."
+  },
+  {
+    "type": "function",
+    "name": "round",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "value"
+          }
+        ],
+        "returns": "<code>integer</code> or <code>series[integer]</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the closest to <strong>x</strong> integer value."
+  },
+  {
+    "type": "function",
+    "name": "sin",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "value"
+          }
+        ],
+        "returns": "<code>numeric</code> or <code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the sine of <strong>x</strong>. <strong>x</strong> is in radians."
+  },
+  {
+    "type": "function",
+    "name": "sqrt",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "value"
+          }
+        ],
+        "returns": "<code>numeric</code> or <code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the square root of <strong>x</strong>."
+  },
+  {
+    "type": "function",
+    "name": "stdev",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "period",
+            "description": "Input period",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the standart deviation (:math:<code>\\sigma</code>) of the last <code>period</code> bars in the <code>series</code>."
+  },
+  {
+    "type": "function",
+    "name": "sum",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "period",
+            "description": "Input period",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the sum of the last <code>period</code> values from the <code>series</code>"
+  },
+  {
+    "type": "function",
+    "name": "tan",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "value"
+          }
+        ],
+        "returns": "<code>numeric</code> or <code>series</code>"
+      }
+    ],
+    "category": "math",
+    "description": "Returns the tangent of <strong>x</strong>. <strong>x</strong> is in radians."
+  },
+  {
+    "type": "function",
+    "name": "advise",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "advice",
+            "description": "advice",
+            "type": "<code>advice</code>"
+          }
+        ]
+      }
+    ],
+    "category": "misc",
+    "description": "Sets the current advice for the instrument based on its current and historical values."
+  },
+  {
+    "type": "function",
+    "name": "assert",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "condition",
+            "description": "A condition to assert on",
+            "type": "<code>boolean</code>"
+          },
+          {
+            "name": "message",
+            "optional": true,
+            "description": "An optional error message",
+            "type": "<code>string</code>"
+          }
+        ]
+      }
+    ],
+    "category": "misc",
+    "description": "Stops the script execution if the <code>condition</code> is <strong>false</strong>. Emits the error <code>message</code> to log. Useful for debugging"
+  },
+  {
+    "type": "function",
+    "name": "bars_since",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "condition",
+            "description": "A condition value fot the current bar",
+            "type": "<code>series</code> or <code>numeric</code> or <code>boolean</code>"
+          }
+        ],
+        "returns": "<code>series[integer]</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Returns the number of bars since <strong>condition</strong> was true. Condition is considered to be <strong>false</strong> if condition is <strong>false</strong>, <strong>nil</strong> or <strong>zero</strong>"
+  },
+  {
+    "type": "function",
+    "name": "bars_since_highest",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "n",
+            "description": "Number of bars to look behind into the history",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series[integer]</code>"
+      },
+      {
+        "args": [
+          {
+            "name": "n",
+            "description": "Number of bars to look behind into the history",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series[integer]</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Same as"
+  },
+  {
+    "type": "function",
+    "name": "bars_since_lowest",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "n",
+            "description": "Number of bars to look behind into the history",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series[integer]</code>"
+      },
+      {
+        "args": [
+          {
+            "name": "n",
+            "description": "Number of bars to look behind into the history",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series[integer]</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Same as"
+  },
+  {
+    "type": "function",
+    "name": "conditional",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "x",
+            "description": "Value for the current bar",
+            "type": "<code>boolean</code>"
+          }
+        ],
+        "returns": "<code>series[boolean]</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Converts a boolean value into the series of boolean values. Value for the current bar is set, when the function is invoked."
+  },
+  {
+    "type": "function",
+    "name": "date",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "timestamp",
+            "optional": true,
+            "description": "A unix timestamp. The default value is the current bar open time",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "Lua table"
+      }
+    ],
+    "category": "misc",
+    "description": "Returns a parsed date and time as a lua table in the OS timezone."
+  },
+  {
+    "type": "function",
+    "name": "drop_plot_value",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "name",
+            "description": "Name of plot",
+            "type": "<code>string</code>"
+          },
+          {
+            "name": "bar_id",
+            "description": "An absolute bar index",
+            "type": "<code>integer</code>"
+          }
+        ]
+      }
+    ],
+    "category": "misc",
+    "description": "Sets the plot <code>name</code> value at index <code>bar_id</code> to <strong>nan</strong>. Current bar index is <code>current_bar_id</code>."
+  },
+  {
+    "type": "function",
+    "name": "error",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "message",
+            "description": "message",
+            "type": "<code>string</code>"
+          }
+        ]
+      }
+    ],
+    "category": "misc",
+    "description": "Breaks the script execution and logs the <code>message</code>."
+  },
+  {
+    "type": "function",
+    "name": "fixnan",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Returns a <code>series</code> with the all <strong>nan</strong> values in the input <code>series</code> replaced with the previous valid value."
+  },
+  {
+    "type": "function",
+    "name": "get_name",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          }
+        ],
+        "returns": "<code>string</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Returns the name of the <code>series</code>."
+  },
+  {
+    "type": "function",
+    "name": "get_value",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "x",
+            "description": "Input value"
+          },
+          {
+            "name": "default",
+            "optional": true,
+            "description": "Optional default value"
+          }
+        ],
+        "returns": "type of <strong>x</strong>"
+      }
+    ],
+    "category": "misc",
+    "description": "Returns the value of <strong>x</strong> at the current bar or <strong>default</strong> value, if <strong>x</strong> does not have the current value"
+  },
+  {
+    "type": "function",
+    "name": "highest",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "n",
+            "description": "Number of bars to look behind into the history",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      },
+      {
+        "args": [
+          {
+            "name": "n",
+            "description": "Number of bars to look behind into the history",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Same as"
+  },
+  {
+    "type": "function",
+    "name": "iff",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "condition",
+            "description": "The condition expression. Condition is considered to be false, if it is <strong>nil</strong>, <strong>nan</strong>, <strong>false</strong> or <strong>0</strong>, true otherwise."
+          },
+          {
+            "name": "then",
+            "description": "A value to be set for the current bar of the returned series, if the <em>condition</em> is true."
+          },
+          {
+            "name": "else",
+            "description": "A value to be set for the current bar of the returned series, if the <em>condition</em> is false."
+          }
+        ],
+        "returns": "<code>series</code> if any of the args is <code>series</code>. <code>numeric</code> otherwise."
+      }
+    ],
+    "category": "misc",
+    "description": "A functional version of the <code>if ... then ... else ...</code> operator. Returns the series with the values from the <em>then</em> and <em>else</em> arguments depending on the <em>condition</em>. This is the safest and the shortest version of the ternary operator (?:), as <em>Lua</em> does not support ternary operators."
+  },
+  {
+    "type": "function",
+    "name": "index_range",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "start_index",
+            "description": "Starting index of the series. Default value is <strong>1</strong>.",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series[integer]</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Returns a series such as <code>series [0] == start_index</code> and <code>series [i] == start_index + i</code>."
+  },
+  {
+    "type": "function",
+    "name": "instrument",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "name",
+            "description": "Display name of the instrument",
+            "type": "<code>string</code>"
+          },
+          {
+            "name": "short_name_or_overlay",
+            "description": "Abbreviated name of the instrument. If the value is boolean, then the value is treated as <code>overlay</code>.",
+            "type": "<code>string</code> or <code>boolean</code>"
+          },
+          {
+            "name": "description_or_overlay",
+            "description": "Description of the instrument. If the value is boolean,     then the value is treated as <code>overlay</code>.",
+            "type": "<code>string</code> or <code>boolean</code>"
+          },
+          {
+            "name": "icon_or_overlay",
+            "description": "Icon of the instrument. If the value is boolean, then the value     is treated as <code>overlay</code>.",
+            "type": "<code>string</code> or <code>boolean</code>"
+          },
+          {
+            "name": "overlay",
+            "description": "If <strong>true</strong> - the instrument is an overlay for the main plot.     Otherwise, the instrument is in a separate panel below the main plot.",
+            "type": "<code>boolean</code>"
+          }
+        ],
+        "has_table_overload": true
+      }
+    ],
+    "category": "misc",
+    "description": "This function determines the base parameters of the instrument. It should be called exactly once at the beginning of the script."
+  },
+  {
+    "type": "function",
+    "name": "is_series",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "value",
+            "description": "Input value"
+          }
+        ],
+        "returns": "<code>boolean</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Determines if the <code>value</code> is an instrument."
+  },
+  {
+    "type": "function",
+    "name": "is_value",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "value",
+            "description": "Input value"
+          }
+        ],
+        "returns": "<code>boolean</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Determines if the <code>value</code> type is <code>numeric</code> or value is <strong>nil</strong>."
+  },
+  {
+    "type": "function",
+    "name": "isnan",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "value",
+            "description": "Input value"
+          }
+        ],
+        "returns": "<code>boolean</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Determines if the <code>value</code> type is not <code>numeric</code> or the value is <code>nan</code>."
+  },
+  {
+    "type": "function",
+    "name": "lower_prime",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Returns the closest to the current value prime number, which is not greater than the value."
+  },
+  {
+    "type": "function",
+    "name": "lowest",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "n",
+            "description": "Number of bars to look behind into the history",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      },
+      {
+        "args": [
+          {
+            "name": "n",
+            "description": "Number of bars to look behind into the history",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Same as"
+  },
+  {
+    "type": "function",
+    "name": "make_series",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "name",
+            "optional": true,
+            "description": "Optional name of the series.",
+            "type": "<code>string</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Explicitly creates a series. Use the <code>set</code> method to set the current value. This function is rarely needed. The primary use is to overcome the limitations of the underlying engine, which does not treat <code>numeric</code> values as"
+  },
+  {
+    "type": "function",
+    "name": "na",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "value",
+            "description": "Input value"
+          }
+        ],
+        "returns": "<code>boolean</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Checks if the <code>value</code> is available, i.e., the <code>value</code> is not  <strong>nan</strong> or <strong>nil</strong>. This function can be implemented as:"
+  },
+  {
+    "type": "function",
+    "name": "nz",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "value",
+            "description": "Optional default value. <strong>0</strong> if default is not set.",
+            "type": "<code>series</code> or <code>numeric</code>"
+          },
+          {
+            "name": "default",
+            "optional": true
+          }
+        ],
+        "returns": "<code>series</code> or <code>numeric</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "If value is <code>series</code>, then function returns a <code>series</code> with the all <strong>nan</strong> values in the input <code>series</code> replaced with the <code>default</code> value. Otherwise, returns <code>value</code> if <strong>value</strong> is not <strong>nan</strong> or <strong>nil</strong>. Otherwise, returns <code>default</code>."
+  },
+  {
+    "type": "function",
+    "name": "prime_bands",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "series",
+            "type": "<code>series</code>"
+          }
+        ],
+        "returns": "tuple of (<code>series</code>, <code>series</code>)"
+      }
+    ],
+    "category": "misc",
+    "description": "Returns the tuple of <code>lower_prime(series), upper_prime(series)</code>"
+  },
+  {
+    "type": "function",
+    "name": "print",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "..."
+          }
+        ]
+      }
+    ],
+    "category": "misc",
+    "description": "Prints all of the arguments to the log. Useful for debugging."
+  },
+  {
+    "type": "function",
+    "name": "rgb",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "r",
+            "description": "The red component of the color in the range of :math:<code>[0,255]</code>",
+            "type": "<code>integer</code>"
+          },
+          {
+            "name": "g",
+            "description": "The green component of the color in the range of :math:<code>[0,255]</code>",
+            "type": "<code>integer</code>"
+          },
+          {
+            "name": "b",
+            "description": "The blue component of the color in the range of :math:<code>[0,255]</code>",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>color</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "This function will create a color from its individual components."
+  },
+  {
+    "type": "function",
+    "name": "rgba",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "r",
+            "description": "The red component of the color in the range of :math:<code>[0,255]</code>",
+            "type": "<code>integer</code>"
+          },
+          {
+            "name": "g",
+            "description": "The green component of the color in the range of :math:<code>[0,255]</code>",
+            "type": "<code>integer</code>"
+          },
+          {
+            "name": "b",
+            "description": "The blue component of the color in the range of :math:<code>[0,255]</code>",
+            "type": "<code>integer</code>"
+          },
+          {
+            "name": "a",
+            "description": "The alpha component of the color in the range of :math:<code>[0,1]</code>",
+            "type": "<code>numeric</code>"
+          }
+        ],
+        "returns": "<code>color</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "This function will create a color from its individual components."
+  },
+  {
+    "type": "function",
+    "name": "sar",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "minaf",
+            "description": "Minimal acceleration factor.",
+            "type": "<code>numeric</code>"
+          },
+          {
+            "name": "step",
+            "description": "Acceleration change step.",
+            "type": "<code>numeric</code>"
+          },
+          {
+            "name": "maxaf",
+            "description": "Maximal acceleration factor.",
+            "type": "<code>numeric</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Returns the <strong>parabolic stop and reverse</strong> instrument for the current security."
+  },
+  {
+    "type": "function",
+    "name": "upper_prime",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Returns the closest to the current value prime number, which is not less than the value."
+  },
+  {
+    "type": "function",
+    "name": "value_when",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "condition",
+            "description": "condition",
+            "type": "<code>boolean</code> or <code>series[boolean]</code>"
+          },
+          {
+            "name": "series",
+            "description": "series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "occurrence",
+            "description": "occurrence",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "misc",
+    "description": "Returns the source <code>series</code> value when the condition was <strong>true</strong> on the n-th most recent occurrence."
+  },
+  {
+    "type": "function",
+    "name": "version",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "min_version",
+            "description": "Minimal required version.",
+            "type": "<code>numeric</code>"
+          }
+        ]
+      }
+    ],
+    "category": "misc",
+    "description": "Sets the minimal version, required to execute the script."
+  },
+  {
+    "type": "function",
+    "name": "roc",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "period",
+            "optional": true,
+            "description": "Input period. Default value is <strong>1</strong>",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "momentum",
+    "description": "Returns the rate of change between the current value and the value <code>period</code> bars ago"
+  },
+  {
+    "type": "function",
+    "name": "rsi",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "period",
+            "description": "Input period",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "momentum",
+    "description": "Returns the relative strength index."
+  },
+  {
+    "type": "function",
+    "name": "cci",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "period",
+            "description": "Input period",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "oscillator",
+    "description": "Returns the commodity channel index."
+  },
+  {
+    "type": "function",
+    "name": "cmo",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "period",
+            "description": "Input period",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "oscillator",
+    "description": "Returns the Chande momentum oscillator."
+  },
+  {
+    "type": "function",
+    "name": "stochastic",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "period",
+            "description": "Input period",
+            "type": "<code>integer</code>"
+          }
+        ],
+        "returns": "<code>series</code>"
+      }
+    ],
+    "category": "oscillator",
+    "description": "Returns the stochastic oscillator."
+  },
+  {
+    "type": "function",
+    "name": "fill",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "first",
+            "description": "First series",
+            "type": "<code>series</code> or <code>numeric</code>"
+          },
+          {
+            "name": "second",
+            "description": "Second series",
+            "type": "<code>series</code> or <code>numeric</code>"
+          },
+          {
+            "name": "name"
+          },
+          {
+            "name": "color",
+            "optional": true
+          }
+        ],
+        "has_table_overload": true
+      }
+    ],
+    "category": "plot",
+    "description": ":params name: Name of the plot. Default value is <code>\"fill(first,second)\"</code>"
+  },
+  {
+    "type": "function",
+    "name": "fill_area",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "first",
+            "description": "First value",
+            "type": "<code>series</code> or <code>numeric</code>"
+          },
+          {
+            "name": "second",
+            "description": "Second value",
+            "type": "<code>series</code> or <code>numeric</code>"
+          },
+          {
+            "name": "name",
+            "optional": true,
+            "description": "Plot name. Default name is <code>\"fill_area(first, second)\"</code>",
+            "type": "<code>string</code>"
+          },
+          {
+            "name": "color",
+            "optional": true,
+            "description": "Plot color. Default value is <code>\"white\"</code>",
+            "type": "<code>color</code>"
+          }
+        ],
+        "has_table_overload": true
+      }
+    ],
+    "category": "plot",
+    "description": "Fills the area between the current values of the <code>first</code> and <code>second</code>."
+  },
+  {
+    "type": "function",
+    "name": "hline",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "source",
+            "description": "Input series or a value.",
+            "type": "<code>series</code> or <code>numeric</code>"
+          },
+          {
+            "name": "name",
+            "description": "Name of the plot. Default value is <code>\"hline(source)\"</code>.",
+            "type": "<code>string</code>"
+          },
+          {
+            "name": "color",
+            "description": "Line color. Default value is <code>\"white\"</code>.",
+            "type": "<code>color</code>"
+          },
+          {
+            "name": "line_width",
+            "description": "Line width. Default value is <code>1</code>.",
+            "type": "<code>integer</code>"
+          },
+          {
+            "name": "offset",
+            "description": "Offset in bars (not yet handled by the engine). Default value is <code>0</code>.",
+            "type": "<code>integer</code>"
+          },
+          {
+            "name": "plot_style",
+            "description": "Plot style. One of <em>style.solid_line</em>, <em>style.dashed_line</em>. Not yet handled by the engine. Default value is <code>style.solid_line</code>.",
+            "type": "<code>plot_style</code>"
+          },
+          {
+            "name": "show_label",
+            "optional": true,
+            "description": "Contols, if the label with value is shown for this line. Default value is <code>true</code>.",
+            "type": "<code>boolean</code>"
+          }
+        ],
+        "has_table_overload": true
+      }
+    ],
+    "category": "plot",
+    "description": "Plots a horizontal line throughout the whole instrument plot area through the latest value in the <strong>source</strong>."
+  },
+  {
+    "type": "function",
+    "name": "plot",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series.",
+            "type": "<code>series[numeric]</code>"
+          },
+          {
+            "name": "name",
+            "optional": true,
+            "description": "Name of the plot. Default value is <code>\"plot(first,second)\"</code>",
+            "type": "<code>string</code>"
+          },
+          {
+            "name": "color",
+            "optional": true,
+            "description": "Color of the plot. Default value is <code>\"white\"</code>",
+            "type": "<code>color</code>"
+          },
+          {
+            "name": "line_width",
+            "optional": true,
+            "description": "Width of the line. Default value is <strong>1</strong>",
+            "type": "<code>integer</code>"
+          },
+          {
+            "name": "offset",
+            "optional": true,
+            "description": "The offset in bars to shift the line left or right. Default value is <strong>0</strong>.",
+            "type": "<code>integer</code>"
+          },
+          {
+            "name": "plot_style",
+            "optional": true,
+            "description": "Plot style. Not yet handled by the engine. Default value is <code>style.solid_line</code>.",
+            "type": "<code>plot_style</code>"
+          },
+          {
+            "name": "na_handling_mode",
+            "optional": true,
+            "description": "The mode for handling <strong>nan</strong> data in the input <code>series</code>. Default value is <strong>na_mode.restart</strong>.",
+            "type": "<code>na_mode</code>"
+          }
+        ],
+        "has_table_overload": true
+      }
+    ],
+    "category": "plot",
+    "description": "Plots the input <code>series</code> as a linear plot."
+  },
+  {
+    "type": "function",
+    "name": "plot_candle",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "open",
+            "description": "Candle open value",
+            "type": "<code>series</code> or <code>numeric</code>"
+          },
+          {
+            "name": "high",
+            "description": "Candle high value",
+            "type": "<code>series</code> or <code>numeric</code>"
+          },
+          {
+            "name": "low",
+            "description": "Candle low value",
+            "type": "<code>series</code> or <code>numeric</code>"
+          },
+          {
+            "name": "close",
+            "description": "Candle close value",
+            "type": "<code>series</code> or <code>numeric</code>"
+          },
+          {
+            "name": "name",
+            "optional": true,
+            "description": "Plot name. Default value is <code>\"pc(open,high,low,close)\"</code>",
+            "type": "<code>string</code>"
+          },
+          {
+            "name": "candle_color",
+            "optional": true,
+            "description": "Candle color",
+            "type": "<code>color</code>"
+          }
+        ],
+        "has_table_overload": true
+      }
+    ],
+    "category": "plot",
+    "description": "Plots a candlestick defined by the <code>open</code>, <code>high</code>, <code>low</code> and <code>close</code> values."
+  },
+  {
+    "type": "function",
+    "name": "plot_shape",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "series",
+            "description": "Input series.     The values are treated as <code>boolean</code>, if the <code>plot_shape_style</code> is not     <strong>shape_location.absolute</strong>",
+            "type": "<code>series</code>"
+          },
+          {
+            "name": "name",
+            "optional": true,
+            "description": "The plot name. Default value is <code>series.name</code>.",
+            "type": "<code>string</code>"
+          },
+          {
+            "name": "plot_shape_style",
+            "optional": true,
+            "description": "The style of the shape. Default value is <strong>shape_style.xcross</strong>.",
+            "type": "<code>shape_style</code>"
+          },
+          {
+            "name": "plot_shape_size",
+            "optional": true,
+            "description": "The size of the shape. Default value is <strong>shape_size.auto</strong>.",
+            "type": "<code>shape_size</code>."
+          },
+          {
+            "name": "shape_color",
+            "optional": true,
+            "description": "The color of the shape. Default value is <code>\"white\"</code>.",
+            "type": "<code>color</code>"
+          },
+          {
+            "name": "plot_shape_location",
+            "optional": true,
+            "description": "The location of the shape. Default value is <strong>shape_location.abovebar</strong>.",
+            "type": "<code>shape_location</code>"
+          },
+          {
+            "name": "offset",
+            "optional": true,
+            "description": "The offset in bars to shift the shape left or right. Default value is <strong>0</strong>.",
+            "type": "<code>integer</code>"
+          },
+          {
+            "name": "text",
+            "optional": true,
+            "description": "The text to display. Default value is <code>\"\"</code>",
+            "type": "<code>string</code>"
+          },
+          {
+            "name": "text_color",
+            "optional": true,
+            "description": "The color of the text to display. Default value is <code>\"white\"</code>",
+            "type": "<code>color</code>"
+          }
+        ],
+        "has_table_overload": true
+      }
+    ],
+    "category": "plot",
+    "description": "Plots a shape defined by the <code>plot_shape_style</code>. This type of plot is the most useful for the overlay instruments."
+  },
+  {
+    "type": "function",
+    "name": "rect",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "first",
+            "description": "First series.",
+            "type": "<code>series</code> or <code>numeric</code>"
+          },
+          {
+            "name": "second",
+            "description": "Second series.",
+            "type": "<code>series</code> or <code>numeric</code>"
+          },
+          {
+            "name": "name",
+            "optional": true,
+            "description": "Plot name. Default name is <code>\"rect(first, second)\"</code>",
+            "type": "<code>string</code>"
+          },
+          {
+            "name": "color",
+            "optional": true,
+            "description": "Plot color. Default value is <code>\"white\"</code>",
+            "type": "<code>color</code>"
+          },
+          {
+            "name": "width",
+            "optional": true,
+            "description": "The width of the rectangle relative to the bar size. Default value is <strong>1</strong>.",
+            "type": "<code>numeric</code>"
+          }
+        ],
+        "has_table_overload": true
+      }
+    ],
+    "category": "plot",
+    "description": "Plots a rectangle with the given <code>width</code> and values defined by the <code>first</code> and <code>last</code>."
+  },
+  {
+    "type": "function",
+    "name": "get_ticker_id",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "ticker",
+            "description": "Input ticker.",
+            "type": "<code>string</code>"
+          }
+        ],
+        "returns": "<code>integer</code>"
+      }
+    ],
+    "category": "security",
+    "description": "Retrieves the ID of the given <code>ticker</code>. If the <code>ticker</code> is not found - the function returns <strong>nil</strong>."
+  },
+  {
+    "type": "function",
+    "name": "security",
+    "signatures": [
+      {
+        "args": [
+          {
+            "name": "ticker_id",
+            "description": "The ID of the ticker.     The ID can be retrieved using the <code>get_ticker_id(ticker)</code>.",
+            "type": "<code>integer</code>"
+          },
+          {
+            "name": "resolution",
+            "description": "The resolution of the returned security.     See description for the possible values.",
+            "type": "<code>string</code>"
+          }
+        ],
+        "returns": "A lua table."
+      }
+    ],
+    "category": "security",
+    "description": "Returns a set of <code>series</code> which represents the given <code>ticker</code> at the <code>resolution</code>."
+  },
+  {
+    "type": "enum",
+    "name": "input_type",
+    "items": [
+      {
+        "name": "input.integer",
+        "description": "Integer value."
+      },
+      {
+        "name": "input.double",
+        "description": "Numeric value."
+      },
+      {
+        "name": "input.boolean",
+        "description": "Boolean value. Presented as a checkbox."
+      },
+      {
+        "name": "input.active",
+        "description": "Currently not supported."
+      },
+      {
+        "name": "input.candle_duration",
+        "description": "Currently not supported."
+      },
+      {
+        "name": "input.string",
+        "description": "String value."
+      },
+      {
+        "name": "input.integer_selection",
+        "description": "Selection from the predefined list of integers."
+      },
+      {
+        "name": "input.double_selection",
+        "description": "Selection from the predefined list of numerics."
+      },
+      {
+        "name": "input.string_selection",
+        "description": "Selection from the predefined list of strings."
+      },
+      {
+        "name": "input.color",
+        "description": "Color value."
+      },
+      {
+        "name": "input.line_width",
+        "description": "Line width value."
+      },
+      {
+        "name": "input.plot_visibility",
+        "description": "Plot visibility settings. Presented as a checkbox."
+      },
+      {
+        "name": "input.plot_shape_style",
+        "description": "Shape style value. Not supported on mobile platforms."
+      },
+      {
+        "name": "input.plot_shape_size",
+        "description": "Shape size value. Not supported on mobile platforms."
+      },
+      {
+        "name": "input.plot_shape_location",
+        "description": "Shape location value. Not supported on mobile platforms."
+      }
+    ]
+  },
+  {
+    "type": "enum",
+    "name": "advice",
+    "items": [
+      {
+        "name": "advice.buy",
+        "description": "The current instrument value advises to buy the current security."
+      },
+      {
+        "name": "advice.neutral",
+        "description": "The current instrument value could not be used to determine the future trend for the current security."
+      },
+      {
+        "name": "advice.sell",
+        "description": "The current instrument value advises to sell the current security."
+      }
+    ]
+  },
+  {
+    "type": "enum",
+    "name": "plot_style",
+    "items": [
+      {
+        "name": "style.solid_line",
+        "description": "Solid line."
+      },
+      {
+        "name": "style.dash_line",
+        "description": "Dashed line."
+      },
+      {
+        "name": "style.area",
+        "description": "Area plot."
+      },
+      {
+        "name": "style.points",
+        "description": "Points plot."
+      },
+      {
+        "name": "style.crosses",
+        "description": "Crosses plot."
+      },
+      {
+        "name": "style.levels",
+        "description": "Levels plot."
+      }
+    ],
+    "description": "Style for the line plots."
+  },
+  {
+    "type": "enum",
+    "name": "na_mode",
+    "items": [
+      {
+        "name": "na_mode.restart",
+        "description": "The line is not drawn over the areas, where series values are <strong>nan</strong>"
+      },
+      {
+        "name": "na_mode.continue",
+        "description": "The line connects subsequent valid values."
+      }
+    ],
+    "description": "The way the plot handles <strong>nan</strong> values in the input series."
+  },
+  {
+    "type": "enum",
+    "name": "shape_style",
+    "items": [
+      {
+        "name": "shape_style.arrowdown",
+        "description": "The shape is drawn as |arrowdown|."
+      },
+      {
+        "name": "shape_style.arrowup",
+        "description": "The shape is drawn as |arrowup|."
+      },
+      {
+        "name": "shape_style.circle",
+        "description": "The shape is drawn as |circle|."
+      },
+      {
+        "name": "shape_style.cross",
+        "description": "The shape is drawn as |cross|."
+      },
+      {
+        "name": "shape_style.diamond",
+        "description": "The shape is drawn as |diamond|."
+      },
+      {
+        "name": "shape_style.flag",
+        "description": "The shape is drawn as |flag|."
+      },
+      {
+        "name": "shape_style.labeldown",
+        "description": "The shape is drawn as |labeldown|."
+      },
+      {
+        "name": "shape_style.labelup",
+        "description": "The shape is drawn as |labelup|."
+      },
+      {
+        "name": "shape_style.square",
+        "description": "The shape is drawn as |square|."
+      },
+      {
+        "name": "shape_style.triangledown",
+        "description": "The shape is drawn as |triangledown|."
+      },
+      {
+        "name": "shape_style.triangleup",
+        "description": "The shape is drawn as |triangleup|."
+      },
+      {
+        "name": "shape_style.xcross",
+        "description": "The shape is drawn as |xcross|."
+      }
+    ]
+  },
+  {
+    "type": "enum",
+    "name": "shape_location",
+    "items": [
+      {
+        "name": "shape_location.abovebar",
+        "description": "The shape is plotted above the bar."
+      },
+      {
+        "name": "shape_location.belowbar",
+        "description": "The shape is plotted below the bar."
+      },
+      {
+        "name": "shape_location.bottom",
+        "description": "The shape is plotted near the bottom chart border."
+      },
+      {
+        "name": "shape_location.top",
+        "description": "The shape is plotted near the top chart border."
+      },
+      {
+        "name": "shape_location.absolute",
+        "description": "The shape position is determined by the series."
+      }
+    ]
+  },
+  {
+    "type": "enum",
+    "name": "shape_size",
+    "items": [
+      {
+        "name": "shape_size.auto",
+        "description": "The shape size depends on the bar size."
+      },
+      {
+        "name": "shape_size.huge",
+        "description": "The shape size is constantly huge."
+      },
+      {
+        "name": "shape_size.large",
+        "description": "The shape size is constantly large."
+      },
+      {
+        "name": "shape_size.normal",
+        "description": "The shape size is constantly normal."
+      },
+      {
+        "name": "shape_size.small",
+        "description": "The shape size is constantly small."
+      },
+      {
+        "name": "shape_size.tiny",
+        "description": "The shape size is constantly tiny."
+      }
+    ]
+  },
+  {
+    "type": "constant",
+    "name": "current_bar_id",
+    "description": "The ID of the bar, currently processed by the script."
+  },
+  {
+    "type": "constant",
+    "name": "current_ticker_id",
+    "description": "Returns the current ticker."
+  },
+  {
+    "type": "constant",
+    "name": "is_daily",
+    "description": "This value is set to <strong>true</strong>, if the current resolution is <code>1D</code>."
+  },
+  {
+    "type": "constant",
+    "name": "is_dwm",
+    "description": "This value is set to <strong>true</strong>, if the current resolution is <code>1D</code>, <code>1W</code> or <code>1M</code>."
+  },
+  {
+    "type": "constant",
+    "name": "is_intraday",
+    "description": "This value is set to <strong>true</strong>, if the current resolution is less than <code>1D</code>."
+  },
+  {
+    "type": "constant",
+    "name": "is_intrahour",
+    "description": "This value is set to <strong>true</strong>, if the current resolution is less than <code>1H</code>."
+  },
+  {
+    "type": "constant",
+    "name": "is_monthly",
+    "description": "This value is set to <strong>true</strong>, if the current resolution is <code>1M</code>."
+  },
+  {
+    "type": "constant",
+    "name": "is_weekly",
+    "description": "This value is set to <strong>true</strong>, if the current resolution is <code>1W</code>."
+  },
+  {
+    "type": "constant",
+    "name": "resolution",
+    "description": "The current bar resolution in seconds."
+  },
+  {
+    "type": "constant",
+    "name": "runtime_version",
+    "description": "The current runtime version as a number. Currently the version is <code>1.1</code>"
+  },
+  {
+    "type": "series",
+    "name": "open",
+    "description": "Open value of the current candle"
+  },
+  {
+    "type": "series",
+    "name": "close",
+    "description": "Close value of the current candle"
+  },
+  {
+    "type": "series",
+    "name": "high",
+    "description": "High value of the current candle"
+  },
+  {
+    "type": "series",
+    "name": "low",
+    "description": "Low value of the current candle"
+  },
+  {
+    "type": "series",
+    "name": "volume",
+    "description": "Volume of the current candle"
+  },
+  {
+    "type": "series",
+    "name": "hml",
+    "description": "<code>high - low</code>"
+  },
+  {
+    "type": "series",
+    "name": "hl2",
+    "description": "<code>(high + low) / 2</code>"
+  },
+  {
+    "type": "series",
+    "name": "hlc3",
+    "description": "<code>(high + low + close) / 3</code> (aka <code>typical price</code>)"
+  },
+  {
+    "type": "series",
+    "name": "ohlc4",
+    "description": "<code>(open + high + low + close) / 4</code>"
+  },
+  {
+    "type": "series",
+    "name": "hlcc4",
+    "description": "<code>(high + low + close + close) / 4</code>"
+  },
+  {
+    "type": "series",
+    "name": "tr",
+    "description": "<code>max (high - low, high - close [1], close [1] - low)</code> (aka <code>true range</code>)"
+  },
+  {
+    "type": "series",
+    "name": "close_time",
+    "description": "Candle closing time (unix time)"
+  },
+  {
+    "type": "series",
+    "name": "open_time",
+    "description": "Candle opening time (unix time)"
+  },
+  {
+    "type": "series",
+    "name": "day",
+    "description": "Candle opening time (day number in a year)"
+  },
+  {
+    "type": "series",
+    "name": "week_day",
+    "description": "Candle opening time (day number in a week)"
+  },
+  {
+    "type": "series",
+    "name": "month",
+    "description": "Candle opening time (month)"
+  },
+  {
+    "type": "series",
+    "name": "year",
+    "description": "Candle opening time (year)"
+  },
+  {
+    "type": "series",
+    "name": "hour",
+    "description": "Candle opening time (hour)"
+  },
+  {
+    "type": "series",
+    "name": "minute",
+    "description": "Candle opening time (minute)"
+  },
+  {
+    "type": "series",
+    "name": "second",
+    "description": "Candle opening time (second)"
+  }
+]
