@@ -230,8 +230,9 @@ For convenience and performance reasons, QCS has a wide range of built-in functi
 
    api/state/*
    built_in_types
-
-
+Welcome to My Project
+=====================
+This is my first live text addition to the Quadcode Script documentation platform.
 Indices
 =======
 
